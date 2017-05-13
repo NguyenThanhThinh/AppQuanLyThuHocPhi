@@ -1,18 +1,38 @@
-﻿namespace AppQuanLyThuHocPhi.Data
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AppQuanLyThuHocPhi.Data
 {
-    public class DbFactory :IDbFactory
+    public class DbFactory : IDisposable,IDbFactory
     {
-        private QLThuHocPhiDbContext dbContext;
+        private Lazy<QLThuHocPhiDbContext> dbContext;
+        private bool disposed;
 
         public void Dispose()
         {
-            if (dbContext != null)
-                dbContext.Dispose();
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
-        public QLThuHocPhiDbContext Init()
+        protected void Dispose(bool disposing)
         {
-            return dbContext ?? (dbContext = new QLThuHocPhiDbContext());
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    dbContext.Value?.Dispose();
+                }
+
+                disposed = true;
+            }
+        }
+
+        public Lazy<QLThuHocPhiDbContext> Init()
+        {
+            return dbContext ?? (dbContext = new Lazy<QLThuHocPhiDbContext>());
         }
 
       

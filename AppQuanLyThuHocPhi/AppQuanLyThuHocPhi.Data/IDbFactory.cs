@@ -4,6 +4,6 @@ namespace AppQuanLyThuHocPhi.Data
 {
     public interface IDbFactory : IDisposable
     {
-        QLThuHocPhiDbContext Init();
+        Lazy<QLThuHocPhiDbContext> Init();
     }
 }

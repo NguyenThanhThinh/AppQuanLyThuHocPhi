@@ -15,5 +15,9 @@ namespace AppQuanLyThuHocPhi.Data
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<PhieuThu> PhieuThus { get; set; }
         public virtual DbSet<SinhVien> SinhViens { get; set; }
+        public static QLThuHocPhiDbContext Create()
+        {
+            return new QLThuHocPhiDbContext();
+        }
     }
 }
