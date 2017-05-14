@@ -8,11 +8,11 @@ using System.Data.Entity;
 
 namespace AppQuanLyThuHocPhi.Data.Repositories
 {
-    public interface ILopRepository 
+    public interface ILopRepository:IRepo<Lop,int>
     {
         List<Lop> GetAllLop();
     }
-    public class LopRepository : GenericRepository<Lop, int>, ILopRepository
+    public class LopRepository : Repo<Lop,int>, ILopRepository
     {
         public LopRepository(QLThuHocPhiDbContext db) : base(db)
         {
@@ -20,7 +20,7 @@ namespace AppQuanLyThuHocPhi.Data.Repositories
 
         public List<Lop> GetAllLop()
         {
-            return GetAll();
+            return List();
         }
     }
 }

@@ -1,12 +1,6 @@
 ﻿using AppQuanLyThuHocPhi.Entities.Models;
-using AppQuanLyThuHocPhi.Entities.ViewModels;
-using AppQuanLyThuHocPhi.Web.Models;
 using AppQuanLyThuHocPhi.Web.Models.ViewModel;
 using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace AppQuanLyThuHocPhi.Web.App_Start
 {

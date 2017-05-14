@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppQuanLyThuHocPhi.Data", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppQuanLyThuHocPhi.Web", "AppQuanLyThuHocPhi.Web\AppQuanLyThuHocPhi.Web.csproj", "{3514A88F-BDA2-47DA-885B-839F67692C62}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppQuanLyThuHocPhi.Service", "AppQuanLyThuHocPhi.Service\AppQuanLyThuHocPhi.Service.csproj", "{29FC64C0-068E-4761-986A-CFAEFD9B7693}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3514A88F-BDA2-47DA-885B-839F67692C62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3514A88F-BDA2-47DA-885B-839F67692C62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3514A88F-BDA2-47DA-885B-839F67692C62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29FC64C0-068E-4761-986A-CFAEFD9B7693}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29FC64C0-068E-4761-986A-CFAEFD9B7693}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29FC64C0-068E-4761-986A-CFAEFD9B7693}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29FC64C0-068E-4761-986A-CFAEFD9B7693}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

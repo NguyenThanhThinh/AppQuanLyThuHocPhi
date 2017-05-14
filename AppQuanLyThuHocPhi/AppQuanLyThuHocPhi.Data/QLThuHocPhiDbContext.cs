@@ -8,20 +8,16 @@ namespace AppQuanLyThuHocPhi.Data
     {
         public QLThuHocPhiDbContext() : base("AppQLPetProject")
         {
-            this.Configuration.LazyLoadingEnabled = false;
+            
         }
-        public virtual DbSet<Lop> Lops { get; set; }
-        public virtual DbSet<LyDoThu> LyDoThus { get; set; }
-        public virtual DbSet<MienGiam> MienGiams { get; set; }
+        public  DbSet<Lop> Lops { get; set; }
+        public  DbSet<LyDoThu> LyDoThus { get; set; }
+        public  DbSet<MienGiam> MienGiams { get; set; }
   
-        public virtual DbSet<NhanVien> NhanViens { get; set; }
+        public  DbSet<NhanVien> NhanViens { get; set; }
     
-        public virtual DbSet<PhieuThu> PhieuThus { get; set; }
-        public virtual DbSet<SinhVien> SinhViens { get; set; }
-        public static QLThuHocPhiDbContext Create()
-        {
-            return new QLThuHocPhiDbContext();
-        }
+        public  DbSet<PhieuThu> PhieuThus { get; set; }
+        public  DbSet<SinhVien> SinhViens { get; set; }
       
     }
 }

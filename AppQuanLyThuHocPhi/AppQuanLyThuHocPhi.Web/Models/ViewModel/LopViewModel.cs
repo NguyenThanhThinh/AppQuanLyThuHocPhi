@@ -7,5 +7,8 @@ namespace AppQuanLyThuHocPhi.Web.Models.ViewModel
 {
     public class LopViewModel
     {
+        public int MaLop { get; set; }
+ 
+        public string TenLop { get; set; }
     }
 }

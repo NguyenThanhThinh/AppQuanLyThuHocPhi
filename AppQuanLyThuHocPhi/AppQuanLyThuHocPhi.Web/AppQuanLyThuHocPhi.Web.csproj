@@ -209,6 +209,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LopController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -258,6 +259,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Lop\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -286,6 +288,10 @@
     <ProjectReference Include="..\AppQuanLyThuHocPhi.Entities\AppQuanLyThuHocPhi.Entities.csproj">
       <Project>{57657C39-D08A-4C1F-A93D-3024BD64709E}</Project>
       <Name>AppQuanLyThuHocPhi.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppQuanLyThuHocPhi.Service\AppQuanLyThuHocPhi.Service.csproj">
+      <Project>{29FC64C0-068E-4761-986A-CFAEFD9B7693}</Project>
+      <Name>AppQuanLyThuHocPhi.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

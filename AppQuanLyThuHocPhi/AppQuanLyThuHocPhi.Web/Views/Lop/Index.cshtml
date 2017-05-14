@@ -1,0 +1,9 @@
+﻿@using AppQuanLyThuHocPhi.Web.Helpers;
+@model IEnumerable<AppQuanLyThuHocPhi.Web.Models.ViewModel.LopViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@Html.Table(Model, "table-condensed")
+
