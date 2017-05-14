@@ -3,7 +3,7 @@ using System.Data.Entity;
 
 namespace AppQuanLyThuHocPhi.Data
 {
-    public class QLThuHocPhiDbContext : DbContext
+    public partial class  QLThuHocPhiDbContext : DbContext
     {
         public QLThuHocPhiDbContext() : base("AppQLPetProject")
         {
