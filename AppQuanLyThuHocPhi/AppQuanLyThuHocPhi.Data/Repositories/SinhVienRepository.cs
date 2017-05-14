@@ -8,12 +8,14 @@ using System.Data.Entity;
 
 namespace AppQuanLyThuHocPhi.Data.Repositories
 {
-    public interface ISinhVienRepository:IRepository<SinhVien>
+    public interface ISinhVienRepository
     {
+
     }
-    public class SinhVienRepository : Repository<SinhVien>, ISinhVienRepository
+  
+    public class SinhVienRepository : GenericRepository<SinhVien,string>, ISinhVienRepository
     {
-        public SinhVienRepository(IDbFactory dbFactory) : base(dbFactory)
+        public SinhVienRepository(QLThuHocPhiDbContext db) : base(db)
         {
         }
     }

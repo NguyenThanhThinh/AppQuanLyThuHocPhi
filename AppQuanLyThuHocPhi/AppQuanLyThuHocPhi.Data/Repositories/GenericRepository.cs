@@ -44,7 +44,7 @@ namespace AppQuanLyThuHocPhi.Data.Repositories
 
     public class GenericRepository<TEntity, TKey> : IGenericRepository<TEntity, TKey> where TEntity : class
     {
-        //protected static readonly NLog.ILogger _log = NLog.LogManager.GetCurrentClassLogger();
+        protected static readonly NLog.ILogger _log = NLog.LogManager.GetCurrentClassLogger();
         protected QLThuHocPhiDbContext _db = null;
         protected DbSet<TEntity> _table = null;
         protected bool _disposed = false;

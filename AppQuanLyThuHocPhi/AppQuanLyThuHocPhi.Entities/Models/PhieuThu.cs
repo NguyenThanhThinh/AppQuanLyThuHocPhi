@@ -15,7 +15,7 @@ namespace AppQuanLyThuHocPhi.Entities.Models
         [Column("SOPHIEU", TypeName = "char")]
         [MaxLength(12)]
         public string SOPHIEU { get; set; }
-        public string MaNV { get; set; }
+        public string Id { get; set; }
         public string MaSV { get; set; }
         public int? HocPhi { get; set; }
         public int? MienGiam { get; set; }

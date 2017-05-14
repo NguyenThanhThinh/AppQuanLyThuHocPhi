@@ -17,7 +17,7 @@ namespace AppQuanLyThuHocPhi.Data.Migrations
                 .PrimaryKey(t => t.MaLop);
             
             CreateTable(
-                "dbo.SinhViens",
+                "dbo.SinhVien",
                 c => new
                     {
                         MaSV = c.String(nullable: false, maxLength: 10, fixedLength: true, unicode: false),
@@ -52,23 +52,23 @@ namespace AppQuanLyThuHocPhi.Data.Migrations
                 "dbo.PhieuThu",
                 c => new
                     {
-                        SOPHIEU = c.String(nullable: false, maxLength: 10, fixedLength: true, unicode: false),
-                        MaNV = c.String(maxLength: 10, fixedLength: true, unicode: false),
+                        SOPHIEU = c.String(nullable: false, maxLength: 12, fixedLength: true, unicode: false),
+                        Id = c.String(),
                         MaSV = c.String(maxLength: 10, fixedLength: true, unicode: false),
                         HocPhi = c.Int(),
                         MienGiam = c.Int(),
                         ThucThu = c.Int(),
                         NgayThu = c.DateTime(),
                         MaLyDoThu = c.Int(nullable: false),
-                        LyDoThu_MaLyDo = c.Int(),
+                        NhanVien_MaNV = c.String(maxLength: 10, fixedLength: true, unicode: false),
                     })
                 .PrimaryKey(t => t.SOPHIEU)
-                .ForeignKey("dbo.LyDoThu", t => t.LyDoThu_MaLyDo)
-                .ForeignKey("dbo.NhanVien", t => t.MaNV)
-                .ForeignKey("dbo.SinhViens", t => t.MaSV)
-                .Index(t => t.MaNV)
+                .ForeignKey("dbo.LyDoThu", t => t.MaLyDoThu, cascadeDelete: true)
+                .ForeignKey("dbo.NhanVien", t => t.NhanVien_MaNV)
+                .ForeignKey("dbo.SinhVien", t => t.MaSV)
                 .Index(t => t.MaSV)
-                .Index(t => t.LyDoThu_MaLyDo);
+                .Index(t => t.MaLyDoThu)
+                .Index(t => t.NhanVien_MaNV);
             
             CreateTable(
                 "dbo.LyDoThu",
@@ -89,9 +89,9 @@ namespace AppQuanLyThuHocPhi.Data.Migrations
                         NgaySinh = c.DateTime(),
                         GioiTinh = c.Boolean(nullable: false),
                         DiaChi = c.String(maxLength: 120),
-                        DienThoai = c.String(maxLength: 20),
+                        DienThoai = c.String(maxLength: 20, unicode: false),
                         Email = c.String(maxLength: 100),
-                        Matkhau = c.String(maxLength: 50),
+                        Matkhau = c.String(maxLength: 50, unicode: false),
                     })
                 .PrimaryKey(t => t.MaNV);
             
@@ -99,21 +99,21 @@ namespace AppQuanLyThuHocPhi.Data.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.PhieuThu", "MaSV", "dbo.SinhViens");
-            DropForeignKey("dbo.PhieuThu", "MaNV", "dbo.NhanVien");
-            DropForeignKey("dbo.PhieuThu", "LyDoThu_MaLyDo", "dbo.LyDoThu");
-            DropForeignKey("dbo.SinhViens", "MaMienGiam", "dbo.MienGiam");
-            DropForeignKey("dbo.SinhViens", "MaLop", "dbo.Lop");
-            DropIndex("dbo.PhieuThu", new[] { "LyDoThu_MaLyDo" });
+            DropForeignKey("dbo.PhieuThu", "MaSV", "dbo.SinhVien");
+            DropForeignKey("dbo.PhieuThu", "NhanVien_MaNV", "dbo.NhanVien");
+            DropForeignKey("dbo.PhieuThu", "MaLyDoThu", "dbo.LyDoThu");
+            DropForeignKey("dbo.SinhVien", "MaMienGiam", "dbo.MienGiam");
+            DropForeignKey("dbo.SinhVien", "MaLop", "dbo.Lop");
+            DropIndex("dbo.PhieuThu", new[] { "NhanVien_MaNV" });
+            DropIndex("dbo.PhieuThu", new[] { "MaLyDoThu" });
             DropIndex("dbo.PhieuThu", new[] { "MaSV" });
-            DropIndex("dbo.PhieuThu", new[] { "MaNV" });
-            DropIndex("dbo.SinhViens", new[] { "MaMienGiam" });
-            DropIndex("dbo.SinhViens", new[] { "MaLop" });
+            DropIndex("dbo.SinhVien", new[] { "MaMienGiam" });
+            DropIndex("dbo.SinhVien", new[] { "MaLop" });
             DropTable("dbo.NhanVien");
             DropTable("dbo.LyDoThu");
             DropTable("dbo.PhieuThu");
             DropTable("dbo.MienGiam");
-            DropTable("dbo.SinhViens");
+            DropTable("dbo.SinhVien");
             DropTable("dbo.Lop");
         }
     }

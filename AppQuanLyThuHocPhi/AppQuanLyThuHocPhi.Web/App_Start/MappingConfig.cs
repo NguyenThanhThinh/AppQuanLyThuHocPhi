@@ -1,4 +1,6 @@
 ﻿using AppQuanLyThuHocPhi.Entities.Models;
+using AppQuanLyThuHocPhi.Entities.ViewModels;
+using AppQuanLyThuHocPhi.Web.Models;
 using AppQuanLyThuHocPhi.Web.Models.ViewModel;
 using AutoMapper;
 using System;
@@ -27,7 +29,8 @@ namespace AppQuanLyThuHocPhi.Web.App_Start
             var config = new MapperConfiguration(map =>
             {
                 map.CreateMap<Lop, LopViewModel>();
-               
+             
+
             });
 
             _mapper = config.CreateMapper();
