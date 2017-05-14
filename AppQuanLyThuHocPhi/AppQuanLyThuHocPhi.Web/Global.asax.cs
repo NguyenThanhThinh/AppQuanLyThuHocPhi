@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppQuanLyThuHocPhi.Web.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,10 +13,12 @@ namespace AppQuanLyThuHocPhi.Web
     {
         protected void Application_Start()
         {
+            IoCContainer.InitContainer();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            MappingConfig.InitMap();
         }
     }
 }

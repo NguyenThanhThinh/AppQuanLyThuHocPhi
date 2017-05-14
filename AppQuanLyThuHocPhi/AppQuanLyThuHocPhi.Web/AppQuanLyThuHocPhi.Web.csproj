@@ -202,6 +202,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\IoCContainer.cs" />
+    <Compile Include="App_Start\MappingConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -213,6 +214,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ViewModel\LopViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -296,6 +298,10 @@
     <ProjectReference Include="..\AppQuanLyThuHocPhi.Data\AppQuanLyThuHocPhi.Data.csproj">
       <Project>{ADD7D538-CB97-4067-950B-A23144B7D7F6}</Project>
       <Name>AppQuanLyThuHocPhi.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppQuanLyThuHocPhi.Entities\AppQuanLyThuHocPhi.Entities.csproj">
+      <Project>{57657C39-D08A-4C1F-A93D-3024BD64709E}</Project>
+      <Name>AppQuanLyThuHocPhi.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
